@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Gaussian Blur",
+        "utility": "fiji",
+        "macro": "run(\"Gaussian Blur...\", \"sigma=2\");",
+        "inputs": "/Volumes/epices/testing/stage 0",
+        "outputs": "/Volumes/epices/testing/stage 1",
+        "instances": 5,
+        "capacity": 1000
+    },
+    {
+        "name": "Auto Threshold",
+        "utility": "fiji",
+        "macro": "setAutoThreshold(\"Default dark\");",
+        "inputs": "/Volumes/epices/testing/stage 1",
+        "outputs": "/Volumes/epices/testing/stage 2",
+        "instances": 5,
+        "capacity": 1000
+    },
+    {
+        "name": "Analyze Particles",
+        "utility": "fiji",
+        "macro": "run(\"Analyze Particles...\", \"size=10-Infinity circularity=0.00-1.00 show=Outlines display clear summarize\");",
+        "inputs": "/Volumes/epices/testing/stage 2",
+        "outputs": "/Volumes/epices/testing/stage 3",
+        "instances": 5,
+        "capacity": 1000
+    },
+    {
+        "name": "Find Edges",
+        "utility": "fiji",
+        "macro": "run(\"Find Edges\");",
+        "inputs": "/Volumes/epices/testing/stage 3",
+        "outputs": "/Volumes/epices/testing/stage 4",
+        "instances": 5,
+        "capacity": 1000
+    },
+    {
+        "name": "Enhance Contrast",
+        "utility": "fiji",
+        "macro": "run(\"Enhance Contrast\", \"saturated=0.35\");",
+        "inputs": "/Volumes/epices/testing/stage 4",
+        "outputs": "/Volumes/epices/testing/stage 5",
+        "instances": 5,
+        "capacity": 1000
+    }
+]
