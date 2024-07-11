@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
 
-from .core.config_manager import ConfigManager
-from .core.task_scheduler import TaskScheduler
-from .kernels.fiji.fiji import FijiKernel
+from mainframe.core.config_manager import ConfigManager
+from mainframe.core.task_scheduler import TaskScheduler
+from mainframe.kernels.fiji.fiji import FijiKernel
 
 class Mainframe:
     def __init__(self, config_path: str):
@@ -70,10 +70,3 @@ class Mainframe:
         """Shutdown Mainframe."""
         if self.task_scheduler:
             self.task_scheduler.shutdown()
-
-# Example usage
-if __name__ == "__main__":
-    mainframe = Mainframe("routines/v1.json")
-    mainframe.initialize()
-    mainframe.run()
-    mainframe.shutdown()
